@@ -1,0 +1,13 @@
+Create a complete Android app called "JavaGoat" — a gaming tournament platform. Output everything as a single shell script using cat <<'EOF' > filepath blocks so I can paste it directly into a terminal/codespace.
+Include these files in order:
+
+app/src/main/res/anim/pulse.xml — scale pulse animation (1.08x, infinite reverse)
+app/src/main/res/anim/float_anim.xml — vertical float animation (-6%, infinite reverse)
+app/src/main/res/color/nav_color.xml — nav color selector (red_main when checked, text_muted default)
+app/src/main/res/drawable/ — all shape/gradient drawables: ic_launcher, bg_auth_screen, bg_auth_card, bg_main_rounded (top corners 35dp), bg_gold_banner, bg_gold_btn, bg_red_btn, bg_card, bg_card_gold_border, bg_wallet_pill (green gradient), bg_input, bg_pill_active, bg_pill_inactive, bg_gradient_bottom, bg_avatar_dark
+app/src/main/res/menu/bottom_nav_menu.xml — 5 items: Home, Matches, Wallet, Profile, Rank
+app/src/main/res/layout/activity_main.xml — full layout with: auth view (card with email/password/username fields), main app view (yellow header + rounded dark page container + BottomNavigationView), 5 page fragments (Home with pill nav + hero banner + 3 RecyclerViews, Matches, Wallet with balance card + add/withdraw buttons, Rank with podium + RecyclerView, Profile), and a fullscreen WebView overlay with close button
+Item layouts: item_game.xml (CardView 185dp with image + PLAY button), item_tournament.xml, item_transaction.xml, item_leaderboard.xml
+MainActivity.java — single file with Firebase Auth + Realtime Database, inline adapter classes (GameAdapter, TournamentAdapter, TxAdapter, RankAdapter), inline model classes (User, Game, Tournament, Transaction), WebView game loader via file:///android_asset/, wallet dialog, leaderboard podium, page switching, pulse/float animations on banner
+
+Color scheme: dark navy bg (#0b0e1e), gold (#f5a623), red (#E53935), yellow header, white text. Package: com.example.javagoat. Use placeholder strings for Firebase config keys.
